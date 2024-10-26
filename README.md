@@ -16,12 +16,13 @@
         }
         .remote {
             display: flex;
-            flex-direction: column;
+            justify-content: space-between;
             align-items: center;
             margin-bottom: 20px;
+            height: 300px; /* Задаем высоту для вертикального центрирования */
         }
         .button {
-            padding: 15px 30px;
+            padding: 30px 45px;
             margin: 10px;
             font-size: 18px;
             cursor: pointer;
@@ -34,9 +35,13 @@
         .button:hover {
             background-color: #0056b3;
         }
-        .row {
+        .left, .center, .right {
             display: flex;
-            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+        }
+        .right {
+            align-items: flex-end; /* Выровнять кнопки вправо */
         }
     </style>
 </head>
@@ -44,22 +49,18 @@
 
 <h1>Управление машинкой</h1>
 <div class="remote">
-    <div class="row">
+    <div class="left">
         <button class="button" onclick="sendCommand('forward')">Вперед</button>
-    </div>
-    <div class="row">
-        <button class="button" onclick="sendCommand('left')">Влево</button>
-        <button class="button" onclick="sendCommand('right')">Вправо</button>
-    </div>
-    <div class="row">
         <button class="button" onclick="sendCommand('backward')">Назад</button>
     </div>
-    <div class="row">
+    <div class="center">
         <button class="button" onclick="sendCommand('sound')">Включить звук</button>
-    </div>
-    <div class="row">
         <button class="button" onclick="sendCommand('mode')">Изменить режим</button>
         <button class="button" onclick="sendCommand('automode')">Автомод</button>
+    </div>
+    <div class="right">
+        <button class="button" onclick="sendCommand('left')">Влево</button>
+        <button class="button" onclick="sendCommand('right')">Вправо</button>
     </div>
 </div>
 
