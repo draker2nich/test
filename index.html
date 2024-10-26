@@ -65,7 +65,7 @@
 </div>
 
 <script>
-    const socket = new WebSocket('ws://<IP_WEMOS>:81'); // Замените <IP_WEMOS> на IP адрес Wemos
+    const socket = new WebSocket('ws://192.168.100.4:81'); // Замените <IP_WEMOS> на IP адрес Wemos
 
     socket.onopen = function() {
         console.log('Соединение установлено');
